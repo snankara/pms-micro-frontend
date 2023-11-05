@@ -25,6 +25,13 @@ export class MenuComponent {
         { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
       ]
     },
+
+    {
+      label: 'Departments',
+      items: [
+        { label: 'Department', icon: 'pi pi-fw pi-home', routerLink: ['department'] }
+      ]
+    },
   ]
 
   onKeydown(event: KeyboardEvent) {
