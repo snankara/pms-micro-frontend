@@ -1,0 +1,41 @@
+{
+  "name": "shared-styles-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-styles-lib/src",
+  "prefix": "pms",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "builder": "@nrwl/web:build",
+      "options": {
+        "styles": ["./src/lib/styles/styles.scss"]
+      }
+    },
+
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared-styles-lib/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared-styles-lib/**/*.ts",
+          "libs/shared-styles-lib/**/*.html"
+        ]
+      }
+    }
+  }
+}
