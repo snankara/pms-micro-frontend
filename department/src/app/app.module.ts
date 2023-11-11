@@ -5,10 +5,7 @@ import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    //Independent start
-    //RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' })
-    
+  imports: [    
     RouterModule.forChild(appRoutes)
   ],
   providers: [],
