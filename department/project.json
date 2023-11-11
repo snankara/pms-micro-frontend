@@ -16,7 +16,7 @@
         "polyfills": ["zone.js"],
         "tsConfig": "department/tsconfig.app.json",
         "assets": ["department/src/favicon.ico", "department/src/assets"],
-        "styles": ["libs/shared-styles-lib/src/index.scss"],
+        "styles": [],
         "scripts": [],
         "customWebpackConfig": {
           "path": "department/webpack.config.ts"
