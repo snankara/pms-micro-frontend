@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@pms/shared-styles": ["libs/shared-styles/src/index.ts"],
-      "department/Module": ["department/src/app/app.module.ts"]
+      "department/Module": ["apps/department/src/app/app.module.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
