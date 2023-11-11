@@ -1,7 +1,7 @@
 {
-  "name": "shared-styles-lib",
+  "name": "shared-styles",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared-styles-lib/src",
+  "sourceRoot": "libs/shared-styles/src",
   "prefix": "pms",
   "tags": [],
   "projectType": "library",
