@@ -1,14 +1,17 @@
 /* eslint-disable @angular-eslint/component-selector */
 
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { Subscription, filter } from 'rxjs';
+import { filter } from 'rxjs';
 import { MenuService } from '../../services/menu.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: '[pms-item]',
+  standalone: true,
+  imports: [NgClass, NgIf, RouterModule],
   template: `
     <ng-container>
       <a

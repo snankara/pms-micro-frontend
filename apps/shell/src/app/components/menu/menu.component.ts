@@ -1,7 +1,12 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ItemComponent } from './item.component';
 
 @Component({
   selector: 'pms-menu',
+  standalone: true,
+  imports: [ScrollPanelModule, NgFor, ItemComponent],
   template: ` <p-scrollPanel [style]="{ width: '100%', height: '100%' }">
     <div class="layout-menu-container" #menuPanel>
       <ul class="layout-menu" role="menu" (keydown)="onKeydown($event)">
