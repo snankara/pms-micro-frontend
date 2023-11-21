@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { SharedModulesModule } from '@pms/shared-modules';
   imports: [
     MenuComponent,
     ItemComponent,
+    BrowserModule,
     SharedModulesModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],

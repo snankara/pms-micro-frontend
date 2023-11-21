@@ -1,26 +1,21 @@
 <div class="layout-topbar">
   <a class="layout-topbar-logo" routerLink="">
-    <img src="" alt="LOGO" />
+    <div style="height: 3rem; width: 9rem;" 
+    class="border-2 border-dashed surface-border text-center">
+      <h4 class="text-500 m-2">LOGO</h4>
+    </div>
   </a>
-  <a
-    class="p-link layout-menu-button layout-topbar-button"
-    href="#"
-    (click)="toggleMenuHandle($event)"
-  >
+  <a class="p-link layout-menu-button layout-topbar-button" href="#" 
+  (click)="toggleMenuHandle($event)">
     <i class="pi pi-bars"></i>
   </a>
-  <a
-    class="p-link layout-topbar-menu-button layout-topbar-button"
-    href="#"
-    (click)="toggleTopMenuHandle($event)"
-  >
+  <a class="p-link layout-topbar-menu-button layout-topbar-button" href="#" 
+  (click)="toggleTopMenuHandle($event)">
     <i class="pi pi-ellipsis-v"></i>
   </a>
 
-  <div
-    class="layout-topbar-menu"
-    [ngClass]="{ 'layout-topbar-menu-mobile-active': topMenuActive }"
-  >
+  <div class="layout-topbar-menu" 
+  [ngClass]="{ 'layout-topbar-menu-mobile-active': topMenuActive }">
     <div>
       <a href="#" class="p-link layout-topbar-button">
         <i class="pi pi-calendar"></i>
