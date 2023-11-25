@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -9,6 +9,7 @@ import { ItemComponent } from './components/menu/item.component';
 import { MenuService } from './services/menu.service';
 import { NavComponent } from './shared/nav/nav.component';
 import { SharedModulesModule } from '@pms/shared-modules';
+import { GlobalErrorHandler } from './errors/global-error-handler';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { SharedModulesModule } from '@pms/shared-modules';
     SharedModulesModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
-  providers: [MenuService],
+  providers: [
+    MenuService,
+    {
+      provide: ErrorHandler, 
+      useClass: GlobalErrorHandler,
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
