@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "pms",
   "sourceRoot": "apps/department/src",
-  "tags": [],
+  "tags": ["scope:department"],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",

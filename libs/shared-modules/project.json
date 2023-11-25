@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared-modules/src",
   "prefix": "pms",
-  "tags": [],
+  "tags": ["scope:shared-modules"],
   "projectType": "library",
   "targets": {
     "test": {
