@@ -10,6 +10,8 @@ import { MenuService } from './services/menu.service';
 import { NavComponent } from './shared/nav/nav.component';
 import { SharedModulesModule } from '@pms/shared-modules';
 import { GlobalErrorHandler } from './errors/global-error-handler';
+import { API_URL } from '@pms/services';
+import { environment } from '../environments/enviroments';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { GlobalErrorHandler } from './errors/global-error-handler';
   ],
   providers: [
     MenuService,
+    
     {
       provide: ErrorHandler, 
       useClass: GlobalErrorHandler,
-    }
+    },
+    { provide: API_URL, useValue: environment.apiUrl }
   ],
   bootstrap: [AppComponent],
 })
