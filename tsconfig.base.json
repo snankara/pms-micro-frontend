@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pms/models": ["libs/core/models/src/index.ts"],
+      "@pms/services": ["libs/core/services/src/index.ts"],
       "@pms/shared-modules": ["libs/shared-modules/src/index.ts"],
       "@pms/shared-styles": ["libs/shared-styles/src/index.ts"],
       "department/Module": ["apps/department/src/app/app.module.ts"]
