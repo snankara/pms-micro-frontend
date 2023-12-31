@@ -1,2 +1,1 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RequestModel{}
+export type RequestModel = Record<string, unknown>;
