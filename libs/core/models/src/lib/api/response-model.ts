@@ -1,2 +1,1 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface ResponseModel{}
+export type ResponseModel = Record<string, unknown>;

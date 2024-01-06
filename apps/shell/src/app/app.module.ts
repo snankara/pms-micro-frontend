@@ -9,9 +9,9 @@ import { ItemComponent } from './components/menu/item.component';
 import { MenuService } from './services/menu.service';
 import { NavComponent } from './shared/nav/nav.component';
 import { SharedModulesModule } from '@pms/shared-modules';
-import { GlobalErrorHandler } from './errors/global-error-handler';
 import { API_URL } from '@pms/services';
 import { environment } from '../environments/enviroments';
+import { GlobalErrorHandler } from '@pms/errors';
 
 @NgModule({
   declarations: [
