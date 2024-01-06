@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "pms",
   "sourceRoot": "apps/department/src",
-  "tags": [],
+  "tags": ["scope:department"],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
@@ -56,17 +56,17 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@nx/angular:webpack-dev-server",
+      "executor": "@nx/angular:dev-server",
       "options": {
         "port": 4201,
         "publicHost": "http://localhost:4201"
       },
       "configurations": {
         "production": {
-          "browserTarget": "department:build:production"
+          "buildTarget": "department:build:production"
         },
         "development": {
-          "browserTarget": "department:build:development"
+          "buildTarget": "department:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -74,38 +74,25 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "department:build"
+        "buildTarget": "department:build"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "apps/department/**/*.ts",
-          "apps/department/**/*.html"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/department/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/department/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "department:build", 
+        "buildTarget": "department:build",
         "port": 4201,
         "watch": false
       },

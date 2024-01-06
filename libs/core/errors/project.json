@@ -1,16 +1,17 @@
 {
-  "name": "shared-modules",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared-modules/src",
+  "name": "errors",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/errors/src",
   "prefix": "pms",
-  "tags": ["scope:shared-modules"],
+  "tags": ["scope:errors"],
   "projectType": "library",
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared-modules/jest.config.ts"
+        "jestConfig": "libs/core/errors/jest.config.ts",
+        "passWithNoTests": false
       }
     },
     "lint": {

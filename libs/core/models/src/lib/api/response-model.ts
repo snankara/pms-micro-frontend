@@ -1,0 +1,1 @@
+export type ResponseModel = Record<string, unknown>;

@@ -4,14 +4,14 @@
   "projectType": "application",
   "prefix": "pms",
   "sourceRoot": "apps/shell/src",
-  "tags": [],
+  "tags": ["scope:shell"],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/shell",
-        "index": "apps/shell/src/index.html", 
+        "index": "apps/shell/src/index.html",
         "main": "apps/shell/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/shell/tsconfig.app.json",
@@ -57,10 +57,10 @@
       },
       "configurations": {
         "production": {
-          "browserTarget": "shell:build:production"
+          "buildTarget": "shell:build:production"
         },
         "development": {
-          "browserTarget": "shell:build:development"
+          "buildTarget": "shell:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -68,28 +68,18 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "apps/shell:build"
+        "buildTarget": "apps/shell:build"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/shell/**/*.ts", "apps/shell/**/*.html"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/shell/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/shell/jest.config.ts"
       }
     },
     "serve-static": {
