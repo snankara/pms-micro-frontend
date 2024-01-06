@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pms/errors": ["libs/core/errors/src/index.ts"],
+      "@pms/models": ["libs/core/models/src/index.ts"],
+      "@pms/services": ["libs/core/services/src/index.ts"],
+      "@pms/shared-modules": ["libs/shared-modules/src/index.ts"],
+      "@pms/shared-styles": ["libs/shared-styles/src/index.ts"],
+      "department/Module": ["apps/department/src/app/app.module.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,1 @@
+export type RequestModel = Record<string, unknown>;
